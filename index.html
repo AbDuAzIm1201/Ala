@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="img/favicon.png">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="navigation-logo">
+                    <img src="./img/photo_2024-08-05_16-20-52-removebg-preview.png" alt="" width="200px">
+                </div>
+                <div class="navigation-list">
+                    <ul>
+                        <a href="">
+                            <li class="item">Home</li>
+                        </a>
+                        <a href="./exchange.html">
+                            <li class="item">Exchange</li>
+                        </a>
+                        <a href="">
+                            <li class="item">Support</li>
+                        </a>
+                    </ul>
+                </div>
+            </nav>
+            <div class="header">
+                <div class="left-header">
+                    <div class="logo-name">
+                        <p>GreenWave Project by Z.A.M agency</p>
+                    </div>
+                    <div class="header-title">
+                        <h1>Bizning jamoamiz innovatsion yondashuvlar va zamonaviy echimlar
+
+                            orqali shahar sifatini yaxshilash, chiqindilarni kamaytirish va qayta ishlash ustida
+                            ishlaydi.
+
+                        </h1>
+                    </div>
+                    <div class="header-btn">
+                        <a href="https://t.me/ecotashkentcitybot"><button>Boshlash</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="container">
+                <div class="first-sec">
+                    <div class="left-sec1">
+                        <div class="left-sec1-title">
+                            <h1>Bu ekologiya rasvoligi statistikasi 2014-2024</h1>
+                            <div class="sec1-box">
+                                <p>2014</p>
+                                <div class="sec1-year-box">
+                                    <div class="sec1-onyear-box">
+                                        26%
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sec1-box">
+                                <p>2016</p>
+                                <div class="sec1-year-box">
+                                    <div class="sec1-onyear-box2">
+                                        58%
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sec1-box">
+                                <p>2024</p>
+                                <div class="sec1-year-box">
+                                    <div class="sec1-onyear-box3">
+                                        <p>84%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-sec1">
+                            <img src="./img/photo_2024-08-06_12-05-07.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <section>
+            <div class="contanier">
+                <div class="bg-img">
+                    <div class="eco">
+                        <div class="eco-img">
+                            <div class="eco-button">
+                                <div class="eco-btn">
+                                    <button class="btn"><b>45 219</b> <br> <b>Принято</b></button>
+                                    <button class="btn"><b>34 044</b> <br> <b>Рассмотрено</b></button>
+                                    <button class="btn"><b>2 187</b> <br> <b>В обработке</b></button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+                <div class="container">
+                    <h1 class="sec-last-h1">Upload Photo</h1>
+                    <form id="uploadForm" enctype="multipart/form-data">
+                        <input type="file" name="photo" accept="image/*" required>
+                       <a href="https://t.me/ecotashkentcitybot"> <button type="reset" class="last-sec-btn">Upload Photo</button></a>
+                    </form>
+                    <p id="responseMessage"></p>
+                </div>
+            
+               
+        </section>
+    </main>
+
+
+    <footer class="footer">
+        <div class="waves">
+          <div class="wave" id="wave1"></div>
+          <div class="wave" id="wave2"></div>
+          <div class="wave" id="wave3"></div>
+          <div class="wave" id="wave4"></div>
+        </div>
+        <p>&copy;2022 ZAM agency | All Rights Reserved</p>
+      </footer>
+      <script>
+        document.getElementById('uploadForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+
+            const response = await fetch('/upload', {
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.json();
+            document.getElementById('responseMessage').textContent = result.message;
+        });
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

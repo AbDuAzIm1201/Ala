@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Ubuntu", sans-serif;
+    transition: 0.2s all;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.navigation-list ul {
+    display: flex;
+    gap: 70px;
+}
+
+.nav-items ul {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-items ul li {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.arrow-li {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.item {
+    cursor: pointer;
+}
+
+.item::after {
+    content: "";
+    width: 0%;
+    background-color: rgb(51, 208, 51);
+    height: 4px;
+    display: block;
+    transition: 1s;
+}
+
+.item:hover::after {
+    content: "";
+    width: 100%;
+}
+
+.navigation-list ul a {
+    color: rgb(0, 101, 10);
+}
+
+.btn {
+    border-radius: 5px;
+    width: 118px;
+    height: 42px;
+    font-size: 15px;
+    background-color: #3586ff;
+    border: none;
+    color: white;
+}
+
+button {
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+button:hover {
+    background-color: black;
+}
+
+.last-content {
+    display: flex;
+    gap: 40px;
+    flex-direction: row;
+    max-width: 720px;
+    margin: 0 auto;
+
+}
+
+.e-mail h1 {
+    margin-bottom: 10px;
+    color: #3D3D3F;
+    font-size: 18px;
+}
+
+.e-mail input {
+    border-radius: 5px;
+    border: none;
+    background-color: #fff;
+    box-shadow: 0px 4px 22px 0px rgba(95, 95, 95, 0.05);
+    padding-left: 10px;
+    width: 343px;
+    height: 52px;
+    margin-bottom: 30px;
+}
+
+.budget input {
+    border-radius: 5px;
+    border: none;
+    background-color: #fff;
+    box-shadow: 0px 4px 22px 0px rgba(95, 95, 95, 0.05);
+    padding-left: 10px;
+}
+
+.name input {
+    border-radius: 5px;
+    border: none;
+    background-color: #fff;
+    box-shadow: 0px 4px 22px 0px rgba(95, 95, 95, 0.05);
+    padding-left: 10px;
+    width: 343px;
+    height: 52px;
+    margin-bottom: 30px;
+}
+
+.name h1 {
+    margin-bottom: 10px;
+    color: #3D3D3F;
+    font-size: 18px;
+}
+
+.write-us input {
+    border-radius: 5px;
+    border: none;
+    background-color: #fff;
+    box-shadow: 0px 4px 22px 0px rgba(95, 95, 95, 0.05);
+    padding-left: 10px;
+}
+
+.write-us h1 {
+    margin-bottom: 10px;
+    color: #3D3D3F;
+    font-size: 18px;
+}
+
+.write-us textarea {
+    width: 719px;
+    height: 191px;
+    resize: none;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 4px 22px 0px rgba(95, 95, 95, 0.05);
+    padding: 10px;
+}
+
+.last-btn {
+
+    border-radius: 5px;
+    width: 207px;
+    height: 53px;
+    font-size: 20px;
+    background-color: green;
+    border: none;
+    color: white;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.last {
+    margin: 0 auto;
+    display: flex;
+    justify-content: end;
+    display: flex;
+    max-width: 719px;
+    margin-bottom: 105px;
+}
+
+.alert {
+    width: 343px;
+    padding: 15px 15px 15px 15px;
+    background-color: lightgreen;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+
+.main-alert {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.contacts-last-h1 {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 60px;
+    margin-top: 50px;
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    background: #2cb941;
+    min-height: 100px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer p {
+    color: #fff;
+    margin: 15px 0 10px 0;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.wave {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(./img/wave_copy.png);
+    background-size: 1000px 100px;
+}
+
+.wave#wave1 {
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWaves 4s linear infinite;
+}   
+
+.wave#wave2 {
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animate 4s linear infinite !important;
+}
+
+.wave#wave3 {
+    z-index: 1000;
+    opacity: 0.2;
+    bottom: 15px;
+    animation: animateWaves 3s linear infinite;
+}
+
+.wave#wave4 {
+    z-index: 999;
+    opacity: 0.7;
+    bottom: 20px;
+    animation: animate 3s linear infinite;
+}
+
+@keyframes animateWaves {
+    0% {
+        background-position-x: 1000px;
+    }
+
+    100% {
+        background-positon-x: 0px;
+    }
+}
+
+@keyframes animate {
+    0% {
+        background-position-x: -1000px;
+    }
+
+    100% {
+        background-positon-x: 0px;
+    }
+}

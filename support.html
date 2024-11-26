@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./support.css">
+    <link rel="icon" href="img/favicon.png">
+
+</head>
+<body>
+    
+    <header>
+        <div class="container">
+            <nav>
+                <div class="navigation-logo">
+                    <img src="./img/photo_2024-08-05_16-20-52-removebg-preview.png" alt="" width="200px">
+                </div>
+                <div class="navigation-list">
+                    <ul>
+                        <a href="./index.html">
+                            <li class="item">Home</li>
+                        </a>
+                        <a href="./exchange.html">
+                            <li class="item">Exchange</li>
+                        </a>
+                        <a href="">
+                            <li class="item">Support</li>
+                        </a>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="container">
+                <form id="tg">
+                    <div class="contacts-last" id="tg">
+                        <h1 class="contacts-last-h1">Bizga murojatingiz:</h1>
+                        <div class="last-content">
+                            <div class="name">
+                                <h1>F.I.SH</h1>
+                                <input type="text" placeholder=" Enter your full name" name="name" required>
+                            </div>
+                            <div class="e-mail">
+                                <h1>Email pochtangiz</h1>
+                                <input type="email" placeholder=" Enter your e-mail" name="email" required>
+                            </div>
+
+                        </div>
+
+                        <div class="last-content">
+                            <div class="write-us">
+                                <h1>Arizangiz </h1>
+                                <textarea placeholder="  Write to us..." name="write" id="" cols="30"
+                                    rows="10" required></textarea>
+
+                            </div>
+                        </div>
+                        <div class="main-alert">
+                            <div id="success" class="alert" style="display: none;" role="alert">
+                            </div>
+                        </div>
+                        <div class="last">
+                            <button type="submit" class="last-btn">Ariza qoldirish</button>
+                        </div>
+                    </div>
+                </form>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/github-api/3.4.0/GitHub.min.js"
+                    referrerpolicy="no-referrer"></script>
+
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+            <script>
+                const TOKEN = "6304492965:AAFe9wqA17pgLwtMZPW23DZImQtP3kWWCJc";
+                const CHAT_ID = "-1001969254365";
+                const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
+                const success = document.getElementById('success')
+
+                document.getElementById('tg').addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    let message = `<b>Notification from website!</b>\n`
+                    message += `<b>User: </b> ${this.name.value}\n`;
+                    message += `<b>E-mail: </b> ${this.email.value}\n`;
+                    message += `<b>Comment: </b> ${this.write.value}\n`;
+
+                    axios.post(URI_API, {
+                        chat_id: CHAT_ID,
+                        parse_mode: 'html',
+                        text: message
+                    })
+                        .then((res) => {
+                            this.name.value = ""
+                            this.email.value = ""
+                            success.innerHTML = "Xabar muvaffaqiyatli yuborildi. Javobimizni elektron pochtangizda kuting";
+                            success.style.display = "block";
+                        })
+                        .catch((err) => {
+                            console.warn(err);
+                        })
+                        .finally(() => {
+                            console.log('Sended');
+                        })
+                })
+            </script>
+        </section>
+    </main>
+
+
+    <footer class="footer">
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+        <p>&copy;2022 ZAM agency | All Rights Reserved</p>
+    </footer>
+</body>
+</html>
